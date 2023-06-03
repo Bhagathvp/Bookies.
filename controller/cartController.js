@@ -32,7 +32,6 @@ const loadCart = async (req, res) => {
 const addToCart = async (req, res) => {
     try {
         const productId = req.query.id;
-        console.log(productId);
         userSession = req.session.user_id;
         if (userSession) {
             const details = await products.findOne({ _id: productId })
@@ -44,7 +43,7 @@ const addToCart = async (req, res) => {
             // res.render('details',{ user: req.session.user,message:"product added to cart !",detail: details, related: product })
 
         } else {
-            res.redirect('/signIn')
+            res.render('users/signIn')
         }
     } catch (error) {
         console.log(error)
