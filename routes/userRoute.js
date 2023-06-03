@@ -51,11 +51,11 @@ router.get("/resendotp",forgotP.resendOtp);
 
 //--------------------------------------
 
+router.get("/addToCart",cartController.addToCart);
+
 router.use(auth.isLogin);
 
 router.get("/loadCart",cartController.loadCart);
-
-router.get("/addToCart",cartController.addToCart);
 
 router.post("/updateCart",cartController.updateCart);
 
