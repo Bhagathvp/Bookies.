@@ -502,6 +502,10 @@
          </div>
       </section>
       <!-- end arrival section -->
+
+      <!-- product_section New -->
+
+      
       
       <!-- product section -->
       <section class="product_section layout_padding">
@@ -511,159 +515,50 @@
                   Best <span>Sellers</span>
                </h2>
             </div>
-            <div class="row">
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p1.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                          It Ends With Us
-                        </h5>
-                        <h6>
-                           ₹274
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p2.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Atomic Habits
-                        </h5>
-                        <h6>
-                           ₹643
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p3.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           It Starts With Us
-                        </h5>
-                        <h6>
-                           ₹384
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p2.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Atomic Habits
-                        </h5>
-                        <h6>
-                           ₹643
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p3.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           It Starts With Us
-                        </h5>
-                        <h6>
-                           ₹384
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p1.png" alt="">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                          It Ends With Us
-                        </h5>
-                        <h6>
-                           ₹274
-                        </h6>
-                     </div>
-                  </div>
-               </div>
+         
                
+       
+            <div class="row ">
+               
+               <% for(i=0;i<product.length-4;i++){ %>
+
+               <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="box h-100">
+
+                     <div class="option_container">
+                        <div class="options">
+                           <a href="/addToCart?id=<%=product[i]._id%>" class="option1">
+                              Add To Cart
+                              </a>
+                           <a href="/view-details?id=<%=product[i]._id%>" class="option2">
+                              View Details
+                              </a>
+               
+                        </div>
+                     </div>
+                     <div class="img-box">
+                        <a href="/view-details?id=<%=product[i]._id%>">
+                           <img  src="/uploads/<%=product[i].image[0]%>" class="card-img-top" alt="<%=product[i].name%>">
+                       </a>
+                     </div>
+                     <div class="detail-box">
+                        <h6>
+                           <%=product[i].name%>
+                        </h6>
+                        <h6>
+                           ₹<%=product[i].price%>
+                        </h6>
+                     </div>
+
+                  </div>
+               </div>
+
+               <%}%>
+
             </div>
+            
+            
+
             <div class="btn-box">
                <a href="/loadshop">
                View All
